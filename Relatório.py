@@ -229,13 +229,13 @@ def Turmas_por_semestre_Aluno():
             if Turma[4] == Cpf_Aluno:
                 if Turma[1] not in controlador1 and Turma[1] == pede_Semestre:
                         controlador1[Turma[1]] = [Turma[0]]
-                elif Turma[0] not in controlador1[Turma[1]] and Turma[1] == pede_Semestre:
+                elif Turma[1] in controlador1 and Turma[0] not in controlador1[Turma[1]] and Turma[1] == pede_Semestre:
                     controlador1[Turma[1]].append(Turma[0])
                 if Turma[0] not in controlador2 and Turma[1] == pede_Semestre:
                     for codigo_disciplina in Di:
                         if codigo_disciplina == Turma[2]:
                             controlador2[Turma[0]] = [Di[codigo_disciplina]]
-                elif Di[Turma[2]] not in controlador2[Turma[0]] and Turma[1] == pede_Semestre:
+                elif Turma[0] in controlador2 and Di[Turma[2]] not in controlador2[Turma[0]] and Turma[1] == pede_Semestre:
                     for codigo_disciplina in Di:
                         if codigo_disciplina == Turma[2]:
                             controlador2[Turma[0]].append(Di[codigo_disciplina])
